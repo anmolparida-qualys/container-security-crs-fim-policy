@@ -1,0 +1,76 @@
+apiVersion: qualys.com/v1
+kind: FimPolicy
+metadata:
+  name: monitor-file-read
+spec:
+  base-policy: "file-read"
+  action: "audit"
+  monitor-paths:
+    - "/etc/passwd"
+    - "/etc/shadow"
+    - "/etc/bashrc"
+    - "/etc/sshd/sshd_config"
+    - "/etc/iptables"
+    - "/etc/sudoers"
+    - "/etc/hosts.allow"
+    - "/etc/hosts.deny"
+    - "/etc/hosts"
+---
+apiVersion: qualys.com/v1
+kind: FimPolicy
+metadata:
+  name: monitor-file-write
+spec:
+  base-policy: "file-write"
+  action: "audit"
+  monitor-paths:
+    - "/var/log"
+    - "/etc/nginx"
+    - "/etc/passwd"
+    - "/etc/shadow"
+    - "/etc/bashrc"
+    - "/etc/sshd/sshd_config"
+    - "/etc/iptables"
+    - "/etc/sudoers"
+    - "/etc/hosts.allow"
+    - "/etc/hosts.deny"
+    - "/etc/hosts"
+---
+apiVersion: qualys.com/v1
+kind: FimPolicy
+metadata:
+  name: monitor-file-write-diff
+spec:
+  base-policy: "file-write-diff"
+  action: "audit"
+  monitor-paths:
+    - "/etc/important-config"
+    - "/etc/passwd"
+    - "/etc/shadow"
+    - "/etc/bashrc"
+    - "/etc/sshd/sshd_config"
+    - "/etc/iptables"
+    - "/etc/sudoers"
+    - "/etc/hosts.allow"
+    - "/etc/hosts.deny"
+    - "/etc/hosts"
+---
+apiVersion: qualys.com/v1
+kind: FimPolicy
+metadata:
+  name: monitor-file-rename
+spec:
+  base-policy: "file-rename"
+  action: "audit"
+  monitor-paths:
+    - "/var/log"
+    - "/etc/nginx"
+    - "/etc/passwd"
+    - "/etc/shadow"
+    - "/etc/bashrc"
+    - "/etc/sshd/sshd_config"
+    - "/etc/iptables"
+    - "/etc/sudoers"
+    - "/etc/hosts.allow"
+    - "/etc/hosts.deny"
+    - "/etc/hosts"
